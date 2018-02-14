@@ -275,14 +275,6 @@
 								<p class="form-control-static"><?php echo $description_pdf; ?></p>
 							</div>
 						</div>
-	
-						<div class="form-group">
-							<label class="col-sm-2 control-label"><?php echo $entry_logging; ?></label>
-	
-							<div class="col-sm-10">
-								<p class="form-control-static"><?php echo $description_logging; ?></p>
-							</div>
-						</div>
 						
 						<div class="form-group">
 							<label class="col-sm-2 control-label"><?php echo $entry_checkout; ?></label>
