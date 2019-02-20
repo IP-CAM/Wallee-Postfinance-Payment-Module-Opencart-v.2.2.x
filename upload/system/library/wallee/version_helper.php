@@ -28,6 +28,10 @@ class WalleeVersionHelper {
 				'file' => 'WalleeQuickCheckoutCompatibility.ocmod.xml',
 				'default_status' => 0 
 			),
+			'WalleeJournalCompatibility' => array(
+				'file' => 'WalleeJournalCompatibility.ocmod.xml',
+				'default_status' => 0
+			),
 			'WalleeXFeeProCompatibility' => array(
 				'file' => 'WalleeXFeeProCompatibility.ocmod.xml',
 				'default_status' => 0
@@ -113,26 +117,6 @@ class WalleeVersionHelper {
 		}
 		
 		return $total_data['totals'];
-	}
-
-	public static function getCurrentCartId(\Registry $registry){
-		if (isset($registry->get('session')->data['cart_id'])) {
-			return $registry->get('session')->data['cart_id'];
-		}
-		
-		$table = DB_PREFIX . 'cart';
-		
-		$customer_id = (int) $registry->get('customer')->getId();
-		$session_id = $registry->get('session')->getId();
-		$session_id = $registry->get('db')->escape($session_id);
-		$customer_id = $registry->get('db')->escape($customer_id);
-		
-		$query = "SELECT cart_id FROM $table WHERE customer_id = '$customer_id' AND session_id = '$session_id';";
-		$result = $registry->get('db')->query($query);
-		if ($result->num_rows > 0) {
-			return $result->row['cart_id'];
-		}
-		return 0;
 	}
 
 	public static function extractLanguageDirectory($language){
