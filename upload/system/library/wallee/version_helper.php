@@ -62,7 +62,7 @@ class WalleeVersionHelper {
 	public static function persistPluginStatus(\Registry $registry, array $post) {
 	}
 
-	public static function getTemplate($template){
+	public static function getTemplate($theme, $template){
 		return $template;
 	}
 
